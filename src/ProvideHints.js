@@ -114,12 +114,6 @@ function shouldBeMasc(subst) {
 }
 
 function check_for_diphthongs(subst) {
-  //let subst = subst;
-  //   for (const letter of subst.slice(0,-1)) {
-  //     //console.log(element);
-  //     if (letter == 'e' && subst[])
-  // }
-
   return [...subst.slice(0, -1)].reduce((prev, curr, index) => {
     if (
       (curr === "e" && ["i", "u"].indexOf(subst[index + 1]) !== -1) ||
@@ -132,7 +126,7 @@ function check_for_diphthongs(subst) {
 }
 
 function check_for_two_syllables(subst, diphthongs) {
-  //"""combines number of diphthongs and number of single-letter vowels to correct number of syllables"""
+  // combines number of diphthongs and number of single-letter vowels to correct number of syllables
 
   let vowels = check_for_single_vowels(subst);
 
@@ -145,8 +139,7 @@ function check_for_two_syllables(subst, diphthongs) {
 }
 
 function check_for_single_vowels(subst) {
-  // """look for vowels that are represented by only one letter""" => count vowels
+  // look for vowels that are represented by only one letter
 
-  //return len([letter for letter in self.subst.lower() if letter in self.vowels])
   return [...subst].filter((letter) => vowels.indexOf(letter) !== -1).length;
 }
